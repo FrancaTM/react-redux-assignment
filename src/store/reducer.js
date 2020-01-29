@@ -9,8 +9,8 @@ const reducer = (state = initialState, action) => {
     case actionTypes.PERSON_ADDED:
       const newPerson = {
         id: Math.random(), // not really unique
-        name: "Túlio",
-        age: Math.floor(Math.random() * 40)
+        name: action.personData.name,
+        age: action.personData.age
       };
       return { ...state, persons: state.persons.concat(newPerson) };
 
